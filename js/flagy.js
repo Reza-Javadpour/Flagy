@@ -11,7 +11,7 @@ $.fn.flagy = function() {
         var flags_db = {'Iran':'+98','Germany':'+49','Italy':'+39','France':'+33','US':'+1'}
         var drdp='<div id="myDropdown" class="dropdown-content">';
         Object.keys(flags_db).forEach(function(k){
-            drdp+= '<a data-country="'+k+'" data-code="'+flags_db[k]+'" href="#"><img class="inlist_flag" src="./img/flag/'+k+'.png" alt="">'+k+'</a>';
+            drdp+= '<a data-country="'+k+'" data-code="'+flags_db[k]+'" href="#"><img class="inlist_flag" src="./img/flags/'+k+'.png" alt="">'+k+'</a>';
         });
         drdp+='</div>';
         var $myDropdown = $(drdp);
@@ -26,7 +26,7 @@ $.fn.flagy = function() {
         var $dropbtn = $('<div class="dropbtn">\
                     <span id="down_sign" class="fas fa-sort-down"></span>\
                     </div>');
-        var $flag_img = $('<img  id="flag_img" src="./img/flag/Iran.png" alt="">');
+        var $flag_img = $('<img  id="flag_img" src="./img/flags/Iran.png" alt="">');
         var $dd_btn = $('<div id="dropdown_btn" ></div>');
 
         var $search_input = $('<input type="text" placeholder="Search.." id="search_input">')
@@ -51,7 +51,7 @@ $.fn.flagy = function() {
         };
 
         _this.change_flag = function(flag){
-            var new_flag = './img/flag/'+flag+'.png';
+            var new_flag = './img/flags/'+flag+'.png';
             $flag_img.attr('src', new_flag);
         };
 
@@ -75,10 +75,8 @@ $.fn.flagy = function() {
         };
 
         _this.filterFunction = function(input){
-            // alert(word);
             var filter, ul, li, a, i;
             filter = input.toUpperCase();
-            // div = $myDropdown;
             a = $myDropdown.find("a");
             for (i = 0; i < a.length; i++) {
                 if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -119,6 +117,6 @@ $.fn.flagy = function() {
         });
 
 
-    });//END of Each
+    });
 };
 
